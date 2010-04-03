@@ -31,6 +31,7 @@ namespace HelloWorld
                 )
             );
             Console.WriteLine(doc);
+            doc.Save("sample.xml");
         }
 
         private static void createXElem() {
