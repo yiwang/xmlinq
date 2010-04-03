@@ -11,10 +11,18 @@ namespace HelloWorld
         {
             System.Console.WriteLine("LING to XML");
             //createXElem();
-            createXDoc();
+            //createXDoc();
+            loadXDoc();
             Console.ReadLine();
         }
-        
+
+        private static void loadXDoc()
+        {
+            XDocument xdoc = XDocument.Load("sample.xml");
+            Console.WriteLine(xdoc);
+
+        }
+
         private static void createXDoc()
         {
             XDocument doc = new XDocument(
