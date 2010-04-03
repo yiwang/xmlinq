@@ -14,6 +14,7 @@ namespace HelloWorld
             createXDoc();
             Console.ReadLine();
         }
+        
         private static void createXDoc()
         {
             XDocument doc = new XDocument(
@@ -21,11 +22,17 @@ namespace HelloWorld
                 new XComment("this is a comment"),
                 new XElement("rss",
                     new XAttribute("ver", "0.0.0"),
-                    new XElement("channel")
+                    new XElement("channel",
+                        new XElement("title", "Channel Title"),
+                        new XElement("desc", "Channel Description"),
+                        new XAttribute("rss-channel-attr", "value")
+                        
+                    )
                 )
             );
             Console.WriteLine(doc);
         }
+
         private static void createXElem() {
             XElement xml = new XElement("contacts",
                                 new XElement("contact",
