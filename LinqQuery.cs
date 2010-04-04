@@ -11,7 +11,7 @@ namespace XmLinq
 {
     class LinqQuery
     {
-        public static void Main2(string[] args)
+        public static void Main(string[] args)
         {
             //Linq2XML.Main0();
             //AlterXML.Main1(args);
@@ -51,12 +51,13 @@ namespace XmLinq
             Console.WriteLine();
         }
 
-        private static void printArray(IEnumerable <double> arr)
+        private static void printArray<T>(IEnumerable <T> arr)
         {
-            foreach (double e in arr)
-            {
+            foreach (T e in arr)
+            {                
                 Console.Write(e);
-                Console.Write(", ");
+                if (!arr.Last().Equals(e)) 
+                    Console.Write(", ");
             }
             Console.WriteLine();
         }
