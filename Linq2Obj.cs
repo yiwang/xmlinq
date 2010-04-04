@@ -12,7 +12,7 @@ namespace XmLinq
 {
     class Linq2Obj
     {
-        public static void Main(string[] args)
+        public static void Main3(string[] args)
         {
             //Linq2XML.Main0();
             //AlterXML.Main1(args);
