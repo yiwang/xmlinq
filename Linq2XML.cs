@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace XmLinq
 {
-    class Hello
+    class Linq2XML
     {
         public static void Main0()
         {
