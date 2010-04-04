@@ -3,11 +3,11 @@ using System.Xml.Linq;
 
 // http://www.hookedonlinq.com/LINQtoXML5MinuteOverview.ashx
 
-namespace XMLINQ
+namespace XmLinq
 {
     class Hello
     {
-        static void Main0()
+        public static void Main0()
         {
             System.Console.WriteLine("LINQ to XML - 5 Minute Overview");
             //createXElem();
