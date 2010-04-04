@@ -16,12 +16,19 @@ namespace XmLinq
         {
             //Linq2XML.Main0();
             //AlterXML.Main1(args);
-            //LinqQuery.Main2(args);
+            LinqQuery.Main2(args);
 
             //nums_sum();
             //contact_sample();
-
+            group_example();
             Console.ReadLine();
+        }
+
+        private static void group_example()
+        {
+            List<Contacts> contacts = Contacts.SampleData();
+            var q = from c in contacts
+                    group c by c.State;
         }
 
         private static void contact_sample()
@@ -52,24 +59,26 @@ namespace XmLinq
         public string FirstName;
         public string LastName;
         public DateTime DateOfBirth;
+        public string State;
 
-        Contacts(string fn,string ln,DateTime dob)
+        Contacts(string fn,string ln,DateTime dob,string st)
         {
             FirstName = fn;
             LastName = ln;
             DateOfBirth = dob;
+            State = st;
         }
 
         public static List<Contacts> SampleData()
         {
             List<Contacts> r = new List<Contacts>();
             
-            r.Add(new Contacts("Barney","Gottshall",Convert.ToDateTime("19-Oct-1945")));
-            r.Add(new Contacts("Yi", "Wang", Convert.ToDateTime("1-May-1993")));
-            r.Add(new Contacts("2", "Gottshall", Convert.ToDateTime("19-Oct-1990")));
-            r.Add(new Contacts("3", "Gottshall", Convert.ToDateTime("19-Oct-1945")));
-            r.Add(new Contacts("4", "Gottshall", Convert.ToDateTime("19-Oct-1945")));
-            r.Add(new Contacts("5", "Gottshall", Convert.ToDateTime("19-Oct-1945")));
+            r.Add(new Contacts("Barney","Gottshall",Convert.ToDateTime("19-Oct-1945"),"CA"));
+            r.Add(new Contacts("Yi", "Wang", Convert.ToDateTime("1-May-1993"),"TX"));
+            r.Add(new Contacts("2", "Gottshall", Convert.ToDateTime("19-Oct-1990"),"WA"));
+            r.Add(new Contacts("3", "Gottshall", Convert.ToDateTime("19-Oct-1945"), "WA"));
+            r.Add(new Contacts("4", "Gottshall", Convert.ToDateTime("19-Oct-1945"), "WA"));
+            r.Add(new Contacts("5", "Gottshall", Convert.ToDateTime("19-Oct-1945"), "WA"));
 
             //Console.WriteLine(r[1].DateOfBirth);
             return r;

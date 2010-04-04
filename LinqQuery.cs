@@ -37,8 +37,18 @@ namespace XmLinq
             var arr = result.ToArray().Reverse();
             var arr1 = result1.ToArray().Reverse();
             printArray(result);
-            printArray(arr1);
+            printArray2(arr1);
             Console.ReadLine();
+        }
+
+        private static void printArray2(IEnumerable<double> arr)
+        {
+            foreach (var e in arr)
+            {
+                Console.Write(e);
+                Console.Write(", ");
+            }
+            Console.WriteLine();
         }
 
         private static void printArray(IEnumerable <double> arr)
