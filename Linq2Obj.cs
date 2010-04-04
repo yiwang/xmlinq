@@ -18,11 +18,53 @@ namespace XmLinq
             //AlterXML.Main1(args);
             //LinqQuery.Main2(args);
 
+            /*
             double[] nums = new double[] { 0, 4, 2, 6, 3, 8, 3, 1 };
             double r = nums.Sum(x => x/2.0);
 
             Console.WriteLine(r);
+            //*/
+            List<Contacts> contacts = Contacts.SampleData();
+
+            var q = from c in contacts
+                    where c.DateOfBirth.AddYears(100) > DateTime.Now
+                    orderby c.DateOfBirth descending
+                    select c.FirstName + " " + c.LastName +
+                        " b." + c.DateOfBirth.ToString("dd-MMM-yyyy");
+
+            foreach (string s in q)
+                Console.WriteLine(s);
+
             Console.ReadLine();
+        }
+    }
+
+    class Contacts
+    {
+        public string FirstName;
+        public string LastName;
+        public DateTime DateOfBirth;
+
+        Contacts(string fn,string ln,DateTime dob)
+        {
+            FirstName = fn;
+            LastName = ln;
+            DateOfBirth = dob;
+        }
+
+        public static List<Contacts> SampleData()
+        {
+            List<Contacts> r = new List<Contacts>();
+            
+            r.Add(new Contacts("Barney","Gottshall",Convert.ToDateTime("19-Oct-1945")));
+            r.Add(new Contacts("Yi", "Wang", Convert.ToDateTime("1-May-1993")));
+            r.Add(new Contacts("2", "Gottshall", Convert.ToDateTime("19-Oct-1990")));
+            r.Add(new Contacts("3", "Gottshall", Convert.ToDateTime("19-Oct-1945")));
+            r.Add(new Contacts("4", "Gottshall", Convert.ToDateTime("19-Oct-1945")));
+            r.Add(new Contacts("5", "Gottshall", Convert.ToDateTime("19-Oct-1945")));
+
+            //Console.WriteLine(r[1].DateOfBirth);
+            return r;
         }
     }
 }
