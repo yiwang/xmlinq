@@ -9,7 +9,7 @@ namespace XMLINQ
     {
         static void Main0()
         {
-            System.Console.WriteLine("LING to XML");
+            System.Console.WriteLine("LINQ to XML - 5 Minute Overview");
             //createXElem();
             //createXDoc();
             loadXDoc();

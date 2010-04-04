@@ -10,27 +10,33 @@ class AlterXML
 {
     static void Main(string[] args)
     {
-        string xml = @"<data><record id='1' /><record id='2' /><record id='3' /><record id='4' /></data>";
+        string xml = @"<data><super /><record id='1' /><record id='2' info='old info' /><record id='3' /><record id='4' /></data>";
         StringReader sr = new StringReader(xml);
         XDocument d = XDocument.Load(sr);
 
         var list = from XElement e in d.Descendants("record")
-                   where e.Attribute("id").Value == "2"
+                   //where e.Attribute("id").Value == "1"
                    select e;
 
         Console.WriteLine(d);
 
         foreach (XElement e in list.ToArray())
         {
-            e.Remove();
+            e.Add(new XElement("sub-rec"));
+            e.SetAttributeValue("K","value");
+            e.SetElementValue("sub-rec-new", "sr");
+            //e.Remove();
         }
 
+        d.Descendants("super").Single().Add(new XElement("sub"));
         d.Descendants("record").Where(x => x.Attribute("id").Value == "3").Single().Remove();
-
+        d.Descendants("record").Where(x => x.Attribute("id").Value == "2").Single().SetAttributeValue("info", "new sample info");
         XmlWriter xw = XmlWriter.Create(Console.Out);
+
         d.WriteTo(xw);
         xw.Flush();
 
+        Console.WriteLine();
         Console.WriteLine(d);
 
         //Console.WriteLine(list);
