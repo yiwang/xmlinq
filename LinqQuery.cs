@@ -16,14 +16,24 @@ namespace XmLinq
             //Linq2XML.Main0();
             //AlterXML.Main1(args);
 
-            double[] nums = new double[] { 0, 4, 2, 3, 543, 3343.3, 432, -3, 0 };
+            double[] nums = new double[] { 0, 4, 4, 2, 3, 543, 3343.3, 432, -3, 0 };
             var result = from n in nums
-                         //where n < 5
+                         where n < 5
                          orderby n                         
                          select n;
 
+            //result = nums.Where(b =>b < 5).OrderBy(b=>b);
+
+            var result1 = (from n in nums
+                      where n < 5
+                      orderby n
+                      select n).Distinct();
+
+
             var arr = result.ToArray().Reverse();
+            var arr1 = result1.ToArray().Reverse();
             printArray(arr);
+            printArray(arr1);
             Console.ReadLine();
         }
 
@@ -34,6 +44,7 @@ namespace XmLinq
                 Console.Write(e);
                 Console.Write(", ");
             }
+            Console.WriteLine();
         }
 
     }
