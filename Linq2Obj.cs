@@ -16,11 +16,12 @@ namespace XmLinq
         {
             //Linq2XML.Main0();
             //AlterXML.Main1(args);
-            LinqQuery.Main2(args);
+            //LinqQuery.Main2(args);
 
             //nums_sum();
             //contact_sample();
             group_example();
+
             Console.ReadLine();
         }
 
@@ -29,6 +30,15 @@ namespace XmLinq
             List<Contacts> contacts = Contacts.SampleData();
             var q = from c in contacts
                     group c by c.State;
+
+            foreach (var group in q)
+            {
+                Console.WriteLine("State: " + group.Key);
+                foreach (Contacts c in group)
+                    Console.WriteLine("  {0}  {1}", c.FirstName, c.LastName);
+            }
+
+
         }
 
         private static void contact_sample()
