@@ -12,7 +12,7 @@ namespace XmLinq
 {
     class JoinSimpleExample
     {
-        public static void Main(string[] args)
+        public static void Main4(string[] args)
         {
             //Linq2XML.Main0();
             //AlterXML.Main1(args);
