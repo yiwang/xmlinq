@@ -12,11 +12,8 @@ namespace XmLinq
 {
     class Linq2Obj
     {
-        public static void Main3(string[] args)
+        public static void main(string[] args)
         {
-            //Linq2XML.Main0();
-            //AlterXML.Main1(args);
-            //LinqQuery.Main2(args);
 
             //nums_sum();
             //contact_sample();

@@ -7,9 +7,15 @@ using System.Collections.Generic;
 
 class app
 {
-    static void Main4()
+    static void Main()
     {
+        
+        object[] vals = { 1, "Hello", true, "World", 9.1 };
+        IEnumerable<string> justStrings = vals.OfType<string>();
 
+        XmLinq.LinqQuery.printArray(justStrings);
+        
+        //
         string[] names = { "Burke", "Connor", "Frank", 
                        "Everett", "Albert", "George", 
                        "Harris", "David" };

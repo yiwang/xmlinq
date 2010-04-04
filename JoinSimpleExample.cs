@@ -12,13 +12,8 @@ namespace XmLinq
 {
     class JoinSimpleExample
     {
-        public static void Main4(string[] args)
+        public static void main(string[] args)
         {
-            //Linq2XML.Main0();
-            //AlterXML.Main1(args);
-            //LinqQuery.Main2(args);
-            //Linq2Obj.Main3(new string[]{"good"});
-
             var customers = new List<Customer>() { 
                 new Customer {Key = 1, Name = "Gottshall" },
                 new Customer {Key = 2, Name = "Valdes" },

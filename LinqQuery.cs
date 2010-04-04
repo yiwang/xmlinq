@@ -11,11 +11,8 @@ namespace XmLinq
 {
     class LinqQuery
     {
-        public static void Main(string[] args)
+        public static void main(string[] args)
         {
-            //Linq2XML.Main0();
-            //AlterXML.Main1(args);
-
             double[] nums = new double[] { 0, 4, 4, 2, 3, 543, 3343.3, 432, -3, 0 };
             var result = from n in nums
                          where n < 5
@@ -51,7 +48,7 @@ namespace XmLinq
             Console.WriteLine();
         }
 
-        private static void printArray<T>(IEnumerable <T> arr)
+        public static void printArray<T>(IEnumerable <T> arr)
         {
             foreach (T e in arr)
             {                

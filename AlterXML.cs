@@ -10,7 +10,7 @@ namespace XmLinq
 {
     class AlterXML
     {
-        public static void Main1(string[] args)
+        public static void main(string[] args)
         {
             string xml = @"<data><super /><record id='1' /><record id='2' info='old info' /><record id='3' /><record id='4' /></data>";
             StringReader sr = new StringReader(xml);
