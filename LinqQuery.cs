@@ -11,7 +11,7 @@ namespace XmLinq
 {
     class LinqQuery
     {
-        static void Main(string[] args)
+        public static void Main2(string[] args)
         {
             //Linq2XML.Main0();
             //AlterXML.Main1(args);
@@ -29,10 +29,14 @@ namespace XmLinq
                       orderby n
                       select n).Distinct();
 
+            foreach (double d in result)
+            {
+                Console.WriteLine(d);
+            }
 
             var arr = result.ToArray().Reverse();
             var arr1 = result1.ToArray().Reverse();
-            printArray(arr);
+            printArray(result);
             printArray(arr1);
             Console.ReadLine();
         }
