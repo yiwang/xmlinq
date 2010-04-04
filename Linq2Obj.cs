@@ -18,12 +18,14 @@ namespace XmLinq
             //AlterXML.Main1(args);
             //LinqQuery.Main2(args);
 
-            /*
-            double[] nums = new double[] { 0, 4, 2, 6, 3, 8, 3, 1 };
-            double r = nums.Sum(x => x/2.0);
+            //nums_sum();
+            //contact_sample();
 
-            Console.WriteLine(r);
-            //*/
+            Console.ReadLine();
+        }
+
+        private static void contact_sample()
+        {
             List<Contacts> contacts = Contacts.SampleData();
 
             var q = from c in contacts
@@ -34,8 +36,14 @@ namespace XmLinq
 
             foreach (string s in q)
                 Console.WriteLine(s);
+        }
 
-            Console.ReadLine();
+        private static void nums_sum()
+        {
+             double[] nums = new double[] { 0, 4, 2, 6, 3, 8, 3, 1 };
+             double r = nums.Sum(x => x/2.0);
+
+             Console.WriteLine(r);
         }
     }
 
