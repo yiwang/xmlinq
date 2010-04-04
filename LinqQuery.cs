@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -22,14 +23,17 @@ namespace XmLinq
                          select n;
 
             var arr = result.ToArray().Reverse();
+            printArray(arr);
+            Console.ReadLine();
+        }
+
+        private static void printArray(IEnumerable <double> arr)
+        {
             foreach (double e in arr)
             {
                 Console.Write(e);
                 Console.Write(", ");
             }
-            Console.WriteLine(arr);
-            
-            Console.ReadLine();
         }
 
     }
